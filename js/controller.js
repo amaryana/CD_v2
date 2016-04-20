@@ -8,12 +8,13 @@ angular.module('cosmicdigest').controller('PostsController', function($scope, $f
   //-
 
 
-$scope.getPosts = function () {
-  FirebaseService.getPosts().then(function(res){
-    $scope.posts = res.data;
-
-  })
-}
-$scope.getPosts();
+// $scope.getPosts = function () {
+//   FirebaseService.getPosts().then(function(res){
+//     $scope.posts = res.data;
+//     console.log($scope.posts);
+//
+//   })
+// }
+// $scope.getPosts();
 
 });
