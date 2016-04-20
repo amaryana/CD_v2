@@ -118,3 +118,10 @@ hr {
 .section_option {
   margin-bottom: 5px;
 }
+.social {
+  background-color: goldenrod;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
