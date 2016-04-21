@@ -6,7 +6,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.use(bodyParser.json());
 
-var port = 80;
+var port = 2000;
 // app.listen(port, function(){
 //  console.log("Listeing on port " + port);
 // });
