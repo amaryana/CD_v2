@@ -1,13 +1,13 @@
-angular.module('cosmicdigest').controller('healthCtrl', function($scope, FirebaseService, $state){
+angular.module('cosmicdigest').controller('healthCtrl', function($scope, $state){
  // console.log($state.current.name);
 
  $scope.getPosts = function (section) {
-   FirebaseService.getPosts(section).then(function(res){
-     $scope.health = res.data;
-     console.log($scope.posts);
+  //  FirebaseService.getPosts(section).then(function(res){
+  //    $scope.health = res.data;
+  //    console.log($scope.posts);
 
-   })
- }
+
+ };
  $scope.getPosts('health');
 
 

@@ -1,4 +1,4 @@
-angular.module("cosmicdigest", ["ui.router", "firebase"])
+angular.module("cosmicdigest", ["ui.router"])
 .config(function($stateProvider, $urlRouterProvider){
   $stateProvider.state('day', {
           url: '/day',
@@ -37,4 +37,5 @@ angular.module("cosmicdigest", ["ui.router", "firebase"])
       });
       $urlRouterProvider
             .otherwise("/day");
+
 });

@@ -19,7 +19,7 @@ var express = require('express');
 passport.use(new FacebookStrategy({
   clientID: keys.facebookKey,
   clientSecret:keys.facebookSecret,
-  callbackURL:'http://cosmicdigest.com/auth/facebook/callback'
+  callbackURL:'http://localhost:8888/auth/facebook/callback/'
 }, function(token, refreshToken, profile, done){
   return done(null, profile);
   }
@@ -30,8 +30,8 @@ app.get('/auth/facebook',
 
 app.get('/auth/facebook/callback',
   passport.authenticate('facebook',{
-    successRedirect:'/me',
-    failureRedirect:'/login'
+    successRedirect:'/day',
+    failureRedirect:'/day'
   }), function(req, res) {
     console.log(req.session);
   });
@@ -41,6 +41,19 @@ app.get('/me', function(req, res){
   return res.send(req.user);
 });
 
+var authcheck = function(req, res, next){
+  if(req.user){
+    // res.status(200).json({loggedIn: true});
+    next();
+  }else{
+    res.status(401).json({loggedIn:false});
+  }
+};
+
+app.post("/url", authcheck, function(req, res){
+  console.log(req.user);
+  return res.send(req.user);
+});
 passport.serializeUser(function(user, done){
   done(null, user);
 });

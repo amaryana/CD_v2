@@ -1,13 +1,13 @@
-angular.module('cosmicdigest').controller('ageCtrl', function($scope, FirebaseService){
+angular.module('cosmicdigest').controller('ageCtrl', function($scope){
 
 
   $scope.getPosts = function (section) {
-    FirebaseService.getPosts(section).then(function(res){
-      $scope.agePosts = res.data;
-      console.log($scope.posts);
+    // FirebaseService.getPosts(section).then(function(res){
+    //   $scope.agePosts = res.data;
+    //   console.log($scope.posts);
 
-    })
-  }
+
+  };
   $scope.getPosts('age');
 
 
